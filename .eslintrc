@@ -1,0 +1,6 @@
+{
+  "extends": "joeray61/react",
+  "env": {
+    "jest": true
+  }
+}
