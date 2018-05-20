@@ -1,7 +1,7 @@
 {
-  "name": "react-koa-app",
+  "name": "blog",
   "version": "1.0.0",
-  "description": "scaffold for create web app with react and koa",
+  "description": "blog built by react & koa",
   "main": "server/index.js",
   "engines": {
     "node": "8.9.0",
@@ -13,7 +13,7 @@
     "dev": "nodemon -w config -w tools tools/server.js",
     "test": "jest --forceExit",
     "lint": "eslint . --fix",
-    "precommit": "lint-staged && npm test",
+    "precommit": "lint-staged",
     "deploy": "sh tools/deploy.sh"
   },
   "lint-staged": {
