@@ -10,6 +10,7 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import configureStore from './store'
 import lazyloader from 'com/lazyloader'
 import HeadBand from 'com/headband'
+import SideNav from 'com/sidenav'
 
 const history = createBrowserHistory()
 const store = configureStore(history)
@@ -17,16 +18,18 @@ const store = configureStore(history)
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <div>
+      <div id='wrapper'>
         <HeadBand />
-        <Router history={history}>
-          <Switch>
-            <Route path='/home' component={lazyloader('home')} />
-            <Route path='/hello' component={lazyloader('hello')} />
-            <Route path='/' component={lazyloader('app')} />
-            <Redirect to='/app' />
-          </Switch>
-        </Router>
+        <div id='container'>
+          <SideNav />
+          <Router history={history}>
+            <Switch>
+              <Route path='/hello' component={lazyloader('hello')} />
+              <Route path='/' component={lazyloader('home')} />
+              <Redirect to='/home' />
+            </Switch>
+          </Router>
+        </div>
       </div>
     </Provider>,
     document.getElementById('app')
