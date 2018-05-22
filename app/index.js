@@ -18,19 +18,19 @@ const store = configureStore(history)
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <div id='wrapper'>
-        <HeadBand />
-        <div id='container'>
-          <SideNav />
-          <Router history={history}>
+      <Router history={history}>
+        <div id='wrapper'>
+          <HeadBand />
+          <div id='container'>
+            <SideNav />
             <Switch>
               <Route path='/hello' component={lazyloader('hello')} />
               <Route path='/' component={lazyloader('home')} />
               <Redirect to='/home' />
             </Switch>
-          </Router>
+          </div>
         </div>
-      </div>
+      </Router>
     </Provider>,
     document.getElementById('app')
   )
