@@ -24,7 +24,6 @@ const render = () => {
           <div id='container'>
             <SideNav />
             <Switch>
-              <Route path='/hello' component={lazyloader('hello')} />
               <Route path='/' component={lazyloader('home')} />
               <Redirect to='/home' />
             </Switch>
