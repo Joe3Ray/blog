@@ -12,6 +12,8 @@ import lazyloader from 'com/lazyloader'
 import HeadBand from 'com/headband'
 import SideNav from 'com/sidenav'
 
+import './iconfont'
+
 const history = createBrowserHistory()
 const store = configureStore(history)
 
