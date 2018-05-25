@@ -1,60 +1,51 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 
-import './index.less'
+import styles from './index.less'
+
+class MenuLink extends React.PureComponent {
+  static propTypes = {
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    to: PropTypes.string.isRequired
+  }
+
+  render () {
+    const { id, title, to } = this.props
+    return (
+      <NavLink to={to} className={styles['menu-item']} activeClassName={styles['menu-selected']}>
+        <svg className={styles.icon} aria-hidden='true'>
+          <use xlinkHref={id} />
+        </svg>
+        {title}
+      </NavLink>
+    )
+  }
+}
 
 export default class Menu extends React.PureComponent {
   render () {
     return (
-      <nav className='menu-wrapper'>
+      <nav className={styles['menu-wrapper']}>
         <ul>
           <li>
-            <NavLink to='/' className='menu-item' activeClassName='menu-selected'>
-              <svg className='icon' aria-hidden='true'>
-                <use xlinkHref='#icon-house' />
-              </svg>
-              首页
-            </NavLink>
+            <MenuLink id='#icon-house' title='首页' to='/' />
           </li>
           <li>
-            <NavLink to='/categories' className='menu-item' activeClassName='menu-selected'>
-              <svg className='icon' aria-hidden='true'>
-                <use xlinkHref='#icon-menu-box' />
-              </svg>
-              分类
-            </NavLink>
+            <MenuLink id='#icon-menu-box' title='分类' to='/categories' />
           </li>
           <li>
-            <NavLink to='/about' className='menu-item' activeClassName='menu-selected'>
-              <svg className='icon' aria-hidden='true'>
-                <use xlinkHref='#icon-person' />
-              </svg>
-              关于
-            </NavLink>
+            <MenuLink id='#icon-person' title='关于' to='/about' />
           </li>
           <li>
-            <NavLink to='/archives' className='menu-item' activeClassName='menu-selected'>
-              <svg className='icon' aria-hidden='true'>
-                <use xlinkHref='#icon-box' />
-              </svg>
-              归档
-            </NavLink>
+            <MenuLink id='#icon-box' title='归档' to='/archives' />
           </li>
           <li>
-            <NavLink to='/tags' className='menu-item' activeClassName='menu-selected'>
-              <svg className='icon' aria-hidden='true'>
-                <use xlinkHref='#icon-tags' />
-              </svg>
-              标签
-            </NavLink>
+            <MenuLink id='#icon-tags' title='标签' to='/tags' />
           </li>
           <li>
-            <NavLink to='/search' className='menu-item' activeClassName='menu-selected'>
-              <svg className='icon' aria-hidden='true'>
-                <use xlinkHref='#icon-search' />
-              </svg>
-              搜索
-            </NavLink>
+            <MenuLink id='#icon-search' title='搜索' to='/search' />
           </li>
         </ul>
       </nav>

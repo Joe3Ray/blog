@@ -1,9 +1,9 @@
 import React from 'react'
 
-import './index.less'
+import styles from './index.less'
 
 export default class HeadBand extends React.PureComponent {
   render () {
-    return <div className='headband' />
+    return <div className={styles.headband} />
   }
 }

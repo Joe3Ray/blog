@@ -1,4 +1,4 @@
-import './index.less'
+import styles from './index.less'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -21,9 +21,9 @@ const render = () => {
   ReactDOM.render(
     <Provider store={store}>
       <Router history={history}>
-        <div id='wrapper'>
+        <div id={styles.wrapper}>
           <HeadBand />
-          <div id='container'>
+          <div id={styles.container}>
             <SideNav />
             <Switch>
               <Route path='/' component={lazyloader('home')} />
