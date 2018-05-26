@@ -36,6 +36,34 @@ export default class SideNav extends React.PureComponent {
             </svg>
             &nbsp;RSS
           </a>
+          <div className={styles.social}>
+            <a href='https://github.com/Joe3Ray'>
+              <svg className={styles.icon} aria-hidden='true'>
+                <use xlinkHref='#icon-github' />
+              </svg>
+              &nbsp;GitHub
+            </a>
+            <a href='http://weibo.com/u/1997891561'>
+              <svg className={styles.icon} aria-hidden='true'>
+                <use xlinkHref='#icon-weibo' />
+              </svg>
+              &nbsp;Weibo
+            </a>
+          </div>
+          <div className={styles['friend-links']}>
+            <h3>
+              <svg className={styles.icon} aria-hidden='true'>
+                <use xlinkHref='#icon-earth' />
+              </svg>
+              &nbsp;友情链接
+            </h3>
+            <div>
+              <a href='https://schoeu.com/'>Schoeu</a>
+            </div>
+            <div>
+              <a href='https://xuexb.com/'>前端小武</a>
+            </div>
+          </div>
         </div>
       </div>
     )
