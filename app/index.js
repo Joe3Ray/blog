@@ -11,6 +11,7 @@ import configureStore from './store'
 import lazyloader from 'com/lazyloader'
 import HeadBand from 'com/headband'
 import SideNav from 'com/sidenav'
+import Footer from 'com/footer'
 
 import './iconfont'
 
@@ -25,11 +26,12 @@ const render = () => {
           <HeadBand />
           <div id={styles.container}>
             <SideNav />
-            <Switch>
+            <Switch className={styles.content}>
               <Route path='/' component={lazyloader('home')} />
               <Redirect to='/home' />
             </Switch>
           </div>
+          <Footer />
         </div>
       </Router>
     </Provider>,
