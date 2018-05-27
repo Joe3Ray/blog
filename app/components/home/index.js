@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import ArticleAbstract from 'com/article/abstract'
+
+import styles from './index.less'
 
 export default class Home extends React.PureComponent {
   render () {
@@ -14,12 +17,13 @@ export default class Home extends React.PureComponent {
       categories: ['技术', '生活']
     }
     return (
-      <div>
+      <div className={styles['home-wrapper']}>
         <ArticleAbstract {...item} />
         <ArticleAbstract {...item} />
         <ArticleAbstract {...item} />
         <ArticleAbstract {...item} />
         <ArticleAbstract {...item} />
+        <Link className={styles.archives} to='/archives'>查看更多 »</Link>
       </div>
     )
   }
