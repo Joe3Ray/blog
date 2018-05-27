@@ -26,10 +26,12 @@ const render = () => {
           <HeadBand />
           <div id={styles.container}>
             <SideNav />
-            <Switch className={styles.content}>
-              <Route path='/' component={lazyloader('home')} />
-              <Redirect to='/home' />
-            </Switch>
+            <div id={styles.content}>
+              <Switch>
+                <Route path='/' component={lazyloader('home')} />
+                <Redirect to='/home' />
+              </Switch>
+            </div>
           </div>
           <Footer />
         </div>
