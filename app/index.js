@@ -28,7 +28,8 @@ const render = () => {
             <SideNav />
             <div id={styles.content}>
               <Switch>
-                <Route path='/' component={lazyloader('home')} />
+                <Route exact path='/categories' component={lazyloader('categories')} />
+                <Route exact path='/' component={lazyloader('home')} />
                 <Redirect to='/home' />
               </Switch>
             </div>

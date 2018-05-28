@@ -14,7 +14,7 @@ class MenuLink extends React.PureComponent {
   render () {
     const { id, title, to } = this.props
     return (
-      <NavLink to={to} className={styles['menu-item']} activeClassName={styles['menu-selected']}>
+      <NavLink exact to={to} className={styles['menu-item']} activeClassName={styles['menu-selected']}>
         <svg className={styles.icon} aria-hidden='true'>
           <use xlinkHref={id} />
         </svg>
