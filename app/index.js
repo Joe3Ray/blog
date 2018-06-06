@@ -136,6 +136,7 @@ const render = () => {
             <div id={styles.content}>
               <Switch>
                 <Route exact path='/categories' component={lazyloader('categories')} />
+                <Route exact path='/tags' component={lazyloader('tags')} />
                 <Route exact path='/' component={lazyloader('home')} />
                 <Redirect to='/' />
               </Switch>
