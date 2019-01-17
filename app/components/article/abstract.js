@@ -1,18 +1,17 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import T from 'prop-types'
 
 import styles from './abstract.less'
 
 export default class ArticleAbstract extends React.PureComponent {
   static propTypes = {
-    title: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    avatar: PropTypes.string.isRequired,
-    categories: PropTypes.array.isRequired
+    title: T.string.isRequired,
+    id: T.string.isRequired,
+    content: T.string.isRequired,
+    author: T.string.isRequired,
+    date: T.string.isRequired,
+    avatar: T.string.isRequired,
+    categories: T.array.isRequired
   }
 
   render () {
@@ -21,9 +20,9 @@ export default class ArticleAbstract extends React.PureComponent {
     const categoriesLinks = categories.map((item, i) => {
       return (
         <span key={i}>
-          <Link className={styles['category-link']} to={`/categories/${item}`}>
+          <a className={styles['category-link']} href={`/categories/${item}`}>
             {item}
-          </Link>
+          </a>
           {i + 1 < categoriesNum ? ', ' : null}
         </span>
       )
@@ -32,9 +31,9 @@ export default class ArticleAbstract extends React.PureComponent {
     return (
       <article className={styles.post}>
         <header>
-          <Link className={styles['post-title']} to={`/post/${id}`}>
+          <a className={styles['post-title']} href={`/post/${id}`}>
             {title}
-          </Link>
+          </a>
         </header>
         <section>
           {content} »

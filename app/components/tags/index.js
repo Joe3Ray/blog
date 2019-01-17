@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import T from 'prop-types'
 
 import styles from './index.less'
 
 class TagLink extends React.PureComponent {
   static propTypes = {
-    text: PropTypes.string.isRequired
+    text: T.string.isRequired
   }
 
   render () {

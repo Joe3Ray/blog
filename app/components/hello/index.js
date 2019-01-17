@@ -1,12 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import T from 'prop-types'
 
 import './index.less'
 
 export default class Hello extends React.Component {
   static propTypes = {
-    info: PropTypes.string.isRequired,
-    fetchUserInfo: PropTypes.func.isRequired
+    info: T.string.isRequired,
+    fetchUserInfo: T.func.isRequired
   }
 
   componentDidMount () {

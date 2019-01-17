@@ -1,11 +1,11 @@
 import { Component } from 'react'
-import PropTypes from 'prop-types'
+import T from 'prop-types'
 import NProgress from 'nprogress'
 
 export default class Bundle extends Component {
   static propTypes = {
-    load: PropTypes.func.isRequired,
-    children: PropTypes.func.isRequired
+    load: T.func.isRequired,
+    children: T.func.isRequired
   }
 
   state = {mod: null}
