@@ -18,6 +18,9 @@ const render = () => {
     <Provider store={store}>
       <Router history={history}>
         <Switch>
+          <Route path='/categories' component={lazyloader('categories')} />
+          <Route path='/tags' component={lazyloader('tags')} />
+          <Route path='/archives' component={lazyloader('archives')} />
           <Route path='/' component={lazyloader('home')} />
           <Redirect to='/' />
         </Switch>

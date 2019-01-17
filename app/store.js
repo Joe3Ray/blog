@@ -13,7 +13,7 @@ export default (history, initialState) => {
       thunk,
       routerMiddleware(history)
     ),
-    window.devToolsExtension ? window.devToolsExtension() : f => f
+    window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
   )(createStore)
   const store = createStoreWithMiddleware(reducer, initialState)
   return store

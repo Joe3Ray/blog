@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import T from 'prop-types'
 
+import Frame from 'com/frame'
+
 import styles from './index.less'
 
 class TagLink extends React.PureComponent {
@@ -49,19 +51,21 @@ export default class Tags extends React.PureComponent {
     ]
 
     return (
-      <div className={styles['tags-wrapper']}>
-        <header>标签</header>
-        <p className={styles['tags-summary']}>
-          目前共计 {tags.length} 个标签
-        </p>
-        <div className={styles['tags-list']}>
-          {
-            tags.map((tag, i) => (
-              <TagLink text={tag} key={i} />
-            ))
-          }
+      <Frame>
+        <div className={styles['tags-wrapper']}>
+          <header>标签</header>
+          <p className={styles['tags-summary']}>
+            目前共计 {tags.length} 个标签
+          </p>
+          <div className={styles['tags-list']}>
+            {
+              tags.map((tag, i) => (
+                <TagLink text={tag} key={i} />
+              ))
+            }
+          </div>
         </div>
-      </div>
+      </Frame>
     )
   }
 }
