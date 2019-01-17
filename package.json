@@ -86,6 +86,7 @@
     "style-loader": "^0.19.1",
     "supertest": "^3.0.0",
     "uglifyjs-webpack-plugin": "^1.1.6",
+    "url-loader": "^0.5.8",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.10.0",
     "webpack-merge": "^4.1.1"
@@ -94,6 +95,7 @@
     "app-module-path": "^2.2.0",
     "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
+    "classnames": "^2.2.6",
     "glob": "^7.1.2",
     "immutable": "^3.8.2",
     "js-yaml": "^3.10.0",

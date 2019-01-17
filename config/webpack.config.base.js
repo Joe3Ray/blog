@@ -25,7 +25,8 @@ module.exports = {
   resolve: {
     alias: {
       com: path.join(srcPath, 'components'),
-      con: path.join(srcPath, 'containers')
+      con: path.join(srcPath, 'containers'),
+      common: path.join(srcPath, 'common')
     }
   },
   module: {
@@ -60,11 +61,23 @@ module.exports = {
         })
       },
       {
-        test: /\.(png|gif|jpg|jpeg|svg)$/,
-        loader: 'happypack/loader',
-        options: {
-          id: 'pic'
-        }
+        oneOf: [
+          {
+            test: /\.(png|gif|jpg|jpeg|svg|woff|ttf|eot)$/,
+            resourceQuery: /\?.*/,
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          },
+          {
+            test: /\.(png|gif|jpg|jpeg|svg|woff|ttf|eot)$/,
+            loader: 'file-loader',
+            options: {
+              name: '[name][hash:21].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
@@ -87,13 +100,6 @@ module.exports = {
       id: 'less',
       threadPool: happyThreadPool,
       loaders: ['css-loader?modules', 'less-loader'],
-      verbose: true,
-      verboseWhenProfiling: true
-    }),
-    new HappyPack({
-      id: 'pic',
-      threadPool: happyThreadPool,
-      loaders: ['file-loader'],
       verbose: true,
       verboseWhenProfiling: true
     }),
